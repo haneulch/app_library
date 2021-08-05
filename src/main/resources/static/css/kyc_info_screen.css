@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+
+@media (max-width:768px) {
+	#kyc-wrap { width:100%; }
+	#kyc-wrap h2 { width:90% !important;  }
+	#kyc-wrap .kyc-list { width:90%; }	
+	#kyc-wrap .kyc-list li .kyc-birth { width:70% }
+	#kyc-wrap .kyc-list li .kyc-sex { width:25% }
+	#kyc-wrap .kyc-next a { width:90% }
+}
+
+#kyc-wrap { width:100%; }
+.sign-logo {  }
+.sign-logo img {  }
+#kyc-wrap h2 { width:50%; margin: 0 auto 40px; font-size:20px; color:#9B7AFD; font-weight:700; text-indent:5px; }
+.kyc-list { width:50%; margin:0 auto; }
+.kyc-list li {}
+.kyc-list li input, li select {
+	width:100%; height:52px; margin-bottom:18px; padding-left:18px;
+	border:1px solid #22B8DD; border-radius:26px; background-color:#fff;
+	font-size:16px; color:#6D6D6D; }
+.kyc-list li select { padding-right:18px;}
+.kyc-list .kyc-id p {  }
+.kyc-list .kyc-birth-sex { clear:both; }
+.kyc-list li .kyc-birth { float:left; width:70%;  }
+.kyc-list li .kyc-sex { float:right; width:25%; }
+
+.kyc-next a{ display:block; clear:both;  width:50%; height:52px; background:#22B8DD; margin:37px auto 15px;
+			    padding:15px 0;border:1px solid #22B8DD; border-radius:26px;
+			   font-size:18px; color:#fff; text-align:center; text-decoration:none; }
+

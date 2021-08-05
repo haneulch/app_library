@@ -1,0 +1,42 @@
+= RESTful Notes API Guide
+:icons: font
+:source-highlighter: highlightjs
+:toc: left
+:toclevels: 4
+:sectnums:
+:sectlinks:
+:sectanchors:
+
+[[api]]
+== File Upload
+* File Upload Test
+
+include::{snippets}/stam-core-application-tests/test-file-upload/http-request.adoc[]
+include::{snippets}/stam-core-application-tests/test-file-upload/http-response.adoc[]
+
+== Data Request Test
+* Data Request Test
+
+include::{snippets}/stam-core-application-tests/test-data-request/http-request.adoc[]
+include::{snippets}/stam-core-application-tests/test-data-request/http-response.adoc[]
+
+== Place Controller
+* Create
+
+include::{snippets}/place-controller-test/test-create/http-request.adoc[]
+include::{snippets}/place-controller-test/test-create/http-response.adoc[]
+
+* FindByName
+
+include::{snippets}/place-controller-test/test-find-by-name/http-request.adoc[]
+include::{snippets}/place-controller-test/test-find-by-name/http-response.adoc[]
+
+* FindByName With Page
+
+include::{snippets}/place-controller-test/test-find-by-name-with-page/http-request.adoc[]
+include::{snippets}/place-controller-test/test-find-by-name-with-page/http-response.adoc[]
+
+* Delete
+
+include::{snippets}/place-controller-test/test-delete/http-request.adoc[]
+include::{snippets}/place-controller-test/test-delete/http-response.adoc[]

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/test.css">
+
+
+
+</head>
+
+
+
+<body>
+	
+	<!-- 카메라 실행하기 -->
+	<div class="test">
+		<label for="take-photo"></label>
+		<input type="file" id="getfile" accept="image/*" capture="camera"  > 
+		
+	</div>
+	
+		
+		
+	
+	<!-- 카메라 실행하는 기본 코드 
+	<input type="file" accept="image/*" capture="camera"  > 
+	-->
+	
+	
+	<!-- 캡쳐하기 -->
+	
+	<!-- 전체 부분-->
+	<button class="capture" onclick=bodyShot()>bodyShot</button>
+	<!-- 일부분 부분-->
+	<!-- 
+	<button onclick=partShot()>partShot</button>  -->
+	
+	<!--  
+	<div class="container" id='container'> -->
+	<!-- 로컬에서 불러온 파일 -->
+	<!--  
+	<img src="img/1534347627.jpg">-->
+	<!-- 웹에서 불러온 파일 -->
+	<!-- 
+	<img src="https://www.w3schools.com/html/img_girl.jpg"> -->
+	<!-- <img src="https://source.unsplash.com/user/erondu/400x400"> --> </div>
+	<!-- 결과화면을 그려줄 canvas -->
+	<!-- 
+	<canvas id="canvas" width="900" height="600" style="border:1px solid #d3d3d3;"></canvas> -->
+	
+	<!-- 캡쳐하기 -->
+	
+	
+	
+	<!-- 다국어처리 -->
+	<!-- 
+	<div class="lang-test">
+		<button id="koBtn" data-lang="ko">한국</button>
+	    <button id="enBtn" data-lang="en">영어</button>
+	
+
+	    <ul class="text">
+	    	<li id="title" data-detect="title"></li>
+	    	<li id="msg" data-detect="msg"></li>
+	    </ul>
+    </div>
+	 -->
+	
+	
+	
+	<!-- 다국어처리2 -->
+	<!-- 
+	<div id="wrap">
+	    <h1 data-langNum="0">자바스크립트 다국어 처리</h1>
+	    <button data-lang="ko">한국어</button>
+	    <button data-lang="ja">일본어</button>
+	    <button data-lang="en">영어</button>
+	    <hr>
+	  
+	    <h2 data-langNum="1">안녕하세요</h2>
+	    <h2 data-langNum="2">오늘은 금요일 입니다.</h2>
+	    <h2 data-langNum="3">불금을 즐겨 보아요.</h2>
+    </div>  -->
+
+
+		
+		<input id="input" type="file" accept="text/*">
+		<script>
+		var inputEl = document.querySelector('#input');
+		inputEl.addEventListener('change', function (event) {
+		  // FileList
+		  var fileList = inputEl.files || event.target.files;
+		  // File
+		  var file = fileList[0];
+		  var reader = new FileReader();
+		  reader.onload = function(progressEvent) {
+		    console.log(progressEvent.target.result);
+		  };
+		  reader.readAsText(file);
+		});
+		</script>
+
+
+
+	
+	<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/html2canvas.min.js"> </script>
+	<script type="text/javascript" src="/js/test.js"> </script>
+</body>
+</html>

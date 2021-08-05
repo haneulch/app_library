@@ -1,0 +1,40 @@
+@charset "UTF-8";
+
+/* reset */
+body,p,ul,ol,li,dl,dt,dd,h1,h2,h3,h4,h5,h6,form,fieldset,input,button { margin:0; padding:0; }
+body,h1,h2,h3,h4,h5,h6,th,td,input,button,select {  font-family: 'Roboto', 'Noto Sans KR', sans-serif; }
+ul,ol,li { list-style:none; }
+img,fieldset { border:none; }
+a { text-decoration:none; color:#666; }
+input:focus {outline:none;}
+select:focus {outline:none;}
+
+
+
+
+body{ padding:20px 20px;}
+
+
+
+
+
+label { display:block; width:190px; height:190px;
+		background:url(/img/result_test_photo.png) center center no-repeat;}
+input[type="file"] { /* 파일 필드 숨기기 */ position: absolute; width: 1px; height: 1px;
+					 padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0; }
+					 
+		
+					 
+					 
+.capture { margin-top: 50px; }
+
+.lang-test { margin-top: 50px; }
+.lang-test button { background:none; border:1px solid #222; width:100px; height:30px; margin-right:10px; }
+.text {}
+.text li { font-size:16px; margin-top:20px; }
+
+#input { background:black; width:100px; height:100px;}
+
+#filelist { margin-top: 100px; }
+
+

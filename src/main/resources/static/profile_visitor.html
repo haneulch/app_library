@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PASS&GO</title>
+	
+	<!-- css -->
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/profile_visitor.css">
+	
+	
+	
+</head>
+
+<body>
+	<div id = "header"></div> <!-- 헤더삽입 -->
+		
+	<div id="visitor-wrap">
+		<div class="content-back visitor-content"> <!-- 토글 밀면 이 클래스 hidden하고 다른 클래스(site) 나오기? -->
+			<div class="user-select">
+				<h2> Select your profile type</h2>
+				<p class="user-visitor">Visitor</p>
+				<div class="toogle-btn">
+					<div class='toggleBG'>
+					    <button class='toggleFG'></button>
+					</div>
+				</div>
+				<p class="user-site">Site</p>	
+				<div>
+					<a class="visitor-btn" id="changeInfo" data-detect="changeInfo"
+					   href="/change_info.html" >  </a>
+				</div>
+			</div>
+			
+			<!-- visitor profile -->
+			<div class="visitor-select">
+				<ul class="pcr-vaccine-select">
+					<li class="test-select-title title-pcr"> <a href="#">My PCR tests</a></li>
+					<li class="title-vaccine"> <a href="#">My vaccines</a></li>
+				</ul>
+				<!-- visitor - My PCR -->
+				<ul class="visitor-list mypcr" id="mypcr-list">
+					<!-- 스크립트에서 삽입--> 
+				</ul>
+				<!-- visitor - My Vaccine -->
+				<ul class="visitor-list myvaccine" id="myvaccine-list"> 
+					<!-- 스크립트에서 삽입--> 
+				</ul>
+			</div>
+			
+			<!-- site profile -->
+			<div class="site-select">
+				<p class="checkin"> checked-in users </p>
+				<ul class="visitor-list" id="myvisitor-list"> 
+					<!-- 스크립트에서 삽입--> 
+				</ul>
+			</div>
+			
+		</div>
+	
+	</div> <!-- visited-wrap -->
+	
+	<div id = "footer"></div> <!-- 푸터삽입 -->
+
+
+
+
+<!-- js -->
+	<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/main.js"> </script>
+	<script type="text/javascript" src="/js/profile.js"> </script>
+	
+	
+</body>
+</html>

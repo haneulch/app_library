@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PASS&GO</title>
+
+<!-- css -->
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/kyc_id_photo-test.css">
+
+
+	
+</head>
+<body>
+		
+	<div id="kyc-id-photo-wrap">
+		<p class="sign-logo"><img src="/img/sign-upLogo.png" alt="로고"></p>
+		<a class="back-btn" href="javascript:history.back();" > <img src="/img/back-btn.png" alt="뒤로가기"> </a>
+		
+		<!-- 이미지 촬영하고 반환하기 -->
+		<div class="file-upload">      
+			<label for="getfile">
+				<img id="preview" src="/img/idphoto.png" alt="로컬에 있는 이미지가 보여지는 영역">
+			</label>
+			<input type="file" id="getfile" accept="image/*" capture="camera" > 
+			
+		</div>
+		
+		<!--  추후에 쓸 일 없으면 지우기 (위의 것으로 대체한 것)
+		<a href="#"> <img class="scan-photo" src="/img/idphoto.png" alt="신분증 사진"  > </a>
+		-->
+		<p class="kyc-id-info">You need to take a photo of your face in order to complete KYC regestration</p>
+		<p class="id-text-pp"> By tapping Next, you accept our Terms and conditions and agree to our processing
+		of your personal data, as described in the Consent to Personal Data Processing</p>
+		<div class="kyc-next long-btn"><a href="/kyc_photo_confirm.html">Next</a></div>
+	</div><!-- kyc-face-photo-wrap -->
+	
+	
+	
+	<!-- js -->
+	<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/camera.js"></script>
+	
+	
+</body>
+</html>

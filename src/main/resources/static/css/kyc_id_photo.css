@@ -1,0 +1,21 @@
+@charset "UTF-8";
+
+@media (max-width:768px) {
+	#kyc-id-photo-wrap .kyc-id-info { width:90%; }
+	#kyc-id-photo-wrap .id-text-pp{ width:90%;}
+	
+}
+
+#kyc-id-photo-wrap {}
+
+/*이미지 촬영하고 반환*/
+.file-upload { width:200px; height:200px; margin: 67px auto; z-index:-9999;}
+.file-upload #preview { display:block; width:100%; }
+.test input[type="file"] { /* 파일 필드 숨기기 */ position: absolute; width: 1px; height: 1px;
+					 padding: 0; margin: -1px; overflow: hidden; clip:rect(0,0,0,0); border: 0; }
+
+
+.scan-photo { display:block; margin: 30px auto 0;}
+.kyc-id-info { width:40%; margin:100px auto 20px;  font-size:16px; text-align:center; color:#6D6D6D; } 
+.id-text-pp { width:40%; margin:0 auto 30px; padding:0 15px; font-size:11px; color:#9B7AFD; text-align:center; }
+

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>PASS&GO</title>
+	
+	<!-- css -->
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/mypass.css">
+	
+	
+	
+	
+</head>
+
+<body>
+	<div id = "header"></div> <!-- 헤더삽입 -->
+		
+	<div id="mypass-wrap">
+		
+		<div class="content-back mypass-content">
+			<div class="mypass-qr"></div>
+			<div class="mypass-content-wrap">
+				<p class="mypass-test">Not tested yet</p>
+				<ul class="mypass-info">
+					<li > <!-- 스크립트 내용처리 부분 -->
+						<span id="nameTitle" class="my-info-title" data-detect="nameTitle"></span>
+						<span id="name" class="my-info-text" data-detect="name"></span>
+					</li>
+					<li >
+						<span id="idTitle" class="my-info-title" data-detect="idTitle"></span>
+						<span id="id" class="my-info-text" data-detect="id"></span>
+					</li>
+					<li >
+						<span id="lastTitle" class="my-info-title" data-detect="lastTitle"></span>
+						<span id="last" class="my-info-text" data-detect="last"></span>
+					</li>
+				</ul>
+				<p class="mypass-photo"><img src="/img/mypage_photo.png" alt="회원사진"></p>
+			</div><!-- mypass-content-wrap -->
+			
+			<!-- QR생성 관련 -->
+			<!-- QR테스트용 create버튼 -->
+			<!-- <div><button id="createBtn">create</button></div>  -->
+			<div> <img id="qrcode" src='' /> </div>
+			
+		</div> <!-- mypass-content -->
+	</div> <!-- mypass-wrap -->
+	
+	<div id = "footer"></div> <!-- 푸터삽입 -->
+
+
+
+<!-- js -->
+	<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/main.js"> </script>
+	<!--  <script type="text/javascript" src="/js/lang-change.js"> </script>  -->
+	
+	
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Insert title here</title>
+<link rel="stylesheet" href="/css/test2.css">
+</head>
+<body>
+
+<!-- 이미지 촬영하고 반환하기 -->
+<div class="test">
+        
+		<label for="getfile">
+			<img id="preview" src="/img/result_test_photo.png" alt="로컬에 있는 이미지가 보여지는 영역">
+		</label>
+		<input type="file" id="getfile" accept="image/*" capture="camera" > 
+		
+	</div>
+
+
+
+<!-- QR코드 생성하기 -->
+
+
+
+	<div class = "qr-test">
+		<label>Name</label><p>
+		<input id ="pass_name"></input>
+	
+		<label>ID</label>
+		<input id ="pass_id"></input>
+	
+		<label>Last-test</label>
+		<input id ="pass_test"></input>
+	</div>
+
+	
+
+	<div><button id="createBtn">create</button></div>
+
+	<div>
+		<img id="qrcode" src='' />
+	</div>
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+	<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/html2canvas.min.js"> </script>
+	<script type="text/javascript" src="/js/test.js"> </script>
+</body>
+
+
+
+</html>

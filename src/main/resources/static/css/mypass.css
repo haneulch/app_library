@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+
+
+@media (max-width:768px) {
+	#mypass-wrap .mypass-content .mypass-content-wrap{ width:90% !important;}
+	
+}
+
+/*mypass*/
+#mypass-wrap { position:relative; width: 100%; height: 100vh; background-color:#22B8DD; }
+#mypass-wrap .content-back { }
+#mypass-wrap .mypass-content .mypass-qr { position:absolute; top:-40px; left:50%;
+										width:195px; height:195px; margin-left:-97.5px; 
+										background:url('/img/mypage_qr.png') no-repeat;
+										border : 7px solid #6D6D6D; border-radius:10px; }
+#mypass-wrap .mypass-content .mypass-content-wrap { width:50%; height: 320px; margin:170px auto; }
+#mypass-wrap .mypass-content .mypass-test { text-align:center; font-size:20px; margin:21px auto; }
+#mypass-wrap .mypass-content .mypass-info {  }
+
+
+#mypass-wrap .mypass-content .mypass-info li .my-info-title { display:inline-block; width:35%; float:left; margin-right:5%; color:#22B8DD; }
+#mypass-wrap .mypass-content .mypass-info li .my-info-text { display:inline-block; width:60%; text-align:right; font-size:16px; margin-bottom:23px; padding-right:0; }
+
+
+#mypass-wrap .mypass-content .mypass-photo {} 
+/*qr스캔 아이콘은 common에*/
+
+
+/* qr코드 이미지 생성관련*/
+#createBtn{ position:absolute; top:200px; /*z-index:99999999;*/ }
+#qrcode { position:absolute; /*z-index:9999999999;*/ display:block; width:195px; height:195px;
+		  top:-40px; left:50%; margin-left:-97.5px; border : 7px solid #00E64C; border-radius:10px; }
+
+
+
+
+

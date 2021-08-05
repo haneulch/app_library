@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PASS&GO</title>
+
+<!-- css -->
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/import_test.css">
+
+
+	
+</head>
+<body>
+		
+	<div id="import-test-wrap">
+		<p class="sign-logo"><img src="/img/sign-upLogo.png" alt="로고"></p>
+		<a class="back-btn" href="javascript:history.back();" > <img src="/img/back-btn.png" alt="뒤로가기"> </a>
+		<!-- 이미지 촬영하고 반환하기 -->
+		<div class="file-upload">      
+			<label for="getfile">
+				<img id="preview" src="/img/result_test_photo.png" alt="로컬에 있는 이미지가 보여지는 영역">
+			</label>
+			<input type="file" id="getfile" accept="image/*" capture="camera" > 
+			
+		</div>
+		<!-- 추후에 쓸 일 없으면 지우기 ( 위의 코드로 대체 한 것)
+		<a href="#"><img class="scan-photo" src="/img/result_test_photo.png" alt="테스트 결과 사진 첨부"  ></a>
+		-->
+		<p class="import-test-info">You need to upload screenshot of SMS or Email containing your most
+		resent PCR test result</p>
+		
+		<div class=" import-btn"><a href="/import_test_2.html">Upload</a></div>
+	</div><!-- import-test-wrap -->
+	
+	
+	
+	
+	<!-- js -->
+	<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/camera.js"></script>
+	
+</body>
+</html>

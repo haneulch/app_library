@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+
+/* 미디어쿼리 */
+@media (max-width:768px) {
+	#sign-up-wrap { width:100%; }
+	#sign-up-wrap h2 { width:90% !important;  }
+	#sign-up-wrap .sign-upList { width:90%; }
+	
+	#sign-up-wrap .sign-upList .sign-login { width:90%; }	
+}
+
+#sign-up-wrap { width:100%;  }
+.sign-logo {  }
+.sign-logo img { }
+#sign-up-wrap h2 { width:50%; margin: 0 auto 40px; font-size:20px; color:#9B7AFD; font-weight:700; text-indent:5px;}
+.sign-upList { width:50%; margin:0 auto; }
+.sign-upList li {}
+.sign-upList li input {
+	width:100%; height:52px; margin-bottom:18px; padding-left:18px;
+	border:1px solid #22B8DD; border-radius:26px;
+	font-size:16px; color:#6D6D6D; }
+.sign-upList .sign-sms input {float:left; width:70%;}
+.sign-upList .sign-sms button {float:right; width:25%; height:52px; color:#fff;
+							 background:#22B8DD; border:1px solid #22B8DD; border-radius:26px;}
+.sign-upList .sign-pw p {   }
+.signsign-up a{ }
+.sign-login{ width:50%; margin: 0 auto; font-size:16px; text-align:center;  }
+.sign-login a { text-decoration:none; }
+.sign-login span { color:#9B7AFD; }

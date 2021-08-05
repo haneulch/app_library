@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PASS&GO</title>
+
+<!-- css -->
+	<link rel="stylesheet" href="/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="/css/common.css">
+	<link rel="stylesheet" href="/css/import_vaccine.css">
+
+
+	
+</head>
+<body>
+		
+	<div id="import_vaccine-wrap">
+		<p class="sign-logo"><img src="/img/sign-upLogo.png" alt="로고"></p>
+		<a class="back-btn" href="javascript:history.back();" > <img src="/img/back-btn.png" alt="뒤로가기"> </a>
+		<a href="#"> <img id="preview" class="file-upload" src="/img/result_vaccine_photo.png" alt="테스트 결과 사진 첨부"  > </a>
+		<p class="import-vaccine-info">You need to take photo of your vaccine
+		certificate or upload it</p>
+		
+		<!--  하단 버튼 모양만 잡았던것(나중에 쓸 데 없으면 지우기)
+		<div class=" long-btn import-vaccine-btn"><a href="#">Take Photo</a></div>
+		<div class=" long-btn import-vaccine-btn"><a href="/import_vaccine_2.html">Upload</a></div> -->
+		
+		<!-- 현재 적용된 input코드가 모바일에서 터치 시 작업선택-카메라/파일중에 고를 수 있음  -->
+		<!-- 그렇게되면 Take photo와 Upload버튼 따로 있기보단 테스트결과 올리는 것 처럼 이미지 클릭 후 작업 선택하여 올리고
+			upload버튼으로 다음화면 넘어가면 좋을 듯 -->
+		<!-- 
+		<div class="file-upload-btn">
+				<label for="take-photo" class="take-photo-btn">
+					   Take Photo
+				</label>
+				<input type="file" id="take-photo" accept="image/*" capture="camera"  > 
+		</div> -->
+		
+		<div class="file-upload-btn">
+				<label for="getfile" class="take-photo-btn">
+					   Upload
+				</label>
+				<input type="file" id="getfile" accept="image/*"> 
+		</div> 
+		<!--  
+		<div class="file-upload">      
+			<label for="getfile" class="take-photo-btn">
+				Upload
+			</label>
+			<input type="file" id="getfile" accept="image/*" capture="camera" > 
+			
+		</div>-->
+		<!-- 프로토타입 작동 확인을 위한 임시 다음 버튼 (추후에 사진 선택 후 바로 다음화면으로 넘어가도록 동작하면 지울것) -->
+		<div class=" import-vaccine-btn"><a href="/import_vaccine_2.html">Next</a></div>
+	</div><!-- import_vaccineWrap -->
+	
+	
+	
+	
+	<!-- js -->
+	<script type="text/javascript" src="/js/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="/js/bootstrap/bootstrap.min.js"></script>
+	<script type="text/javascript" src="/js/camera.js"></script>
+	
+	
+</body>
+</html>
