@@ -1,5 +1,5 @@
-# StamCore
-Stam Core Framework
+# APP LIBRARY SERVER
+APP LIBRARY API SERVER
 
 ## lombok.jar
 * [lombok download](https://projectlombok.org/download)
