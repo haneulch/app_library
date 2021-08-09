@@ -9,11 +9,11 @@
 		<version>2.4.5</version>
 		<relativePath />
 	</parent>
-	<groupId>kr.stam</groupId>
+	<groupId>kr.library</groupId>
 	<artifactId>Library</artifactId>
 	<version>1.0.0</version>
-	<name>StamCore</name>
-	<description>Stam Core Framework</description>
+	<name>AppLibrary</name>
+	<description>App Library API Server</description>
 	<packaging>war</packaging>
 	<properties>
 		<java.version>11</java.version>
