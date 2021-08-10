@@ -2,8 +2,6 @@ package kr.library.core.dto;
 
 import org.springframework.http.HttpStatus;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
@@ -12,9 +10,7 @@ import lombok.Setter;
 @Setter
 @Builder
 public class ErrorResponse {
-	String code;
+	int code;
 	String message;
-	
-	@JsonIgnore
 	HttpStatus status;
 }
