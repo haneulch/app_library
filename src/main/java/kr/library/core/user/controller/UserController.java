@@ -14,7 +14,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import kr.library.core.constant.MessageConstants;
 import kr.library.core.dto.ErrorResponse;
-import kr.library.core.dto.SignInResponse;
+import kr.library.core.dto.TokenResponse;
 import kr.library.core.dto.UserRequest;
 import kr.library.core.entity.User;
 import kr.library.core.user.service.UserService;
@@ -43,7 +43,7 @@ public class UserController {
 			String accessToken = jwtUtils.createAccessToken(user.getUsername());
 			String refreshToken = jwtUtils.createRefreshToken(accessToken);
 			
-			SignInResponse response = SignInResponse.builder()
+			TokenResponse response = TokenResponse.builder()
 											.accessToken(accessToken)
 											.refreshToken(refreshToken)
 											.build();
@@ -58,6 +58,20 @@ public class UserController {
 								.build();
 		
 		return JsonResponseUtils.error(error);
+	}
+	
+	@PostMapping("/refreshToken")
+	public ResponseEntity<Map<String, Object>> refreshToken(@RequestBody UserRequest userRequest) {
+		
+	    String accessToken = jwtUtils.createAccessToken(userRequest.getUsername());
+	    String refreshToken = jwtUtils.createRefreshToken(accessToken);
+	    
+		TokenResponse response = TokenResponse.builder()
+									.accessToken(accessToken)
+									.refreshToken(refreshToken)
+									.build();
+		
+		return JsonResponseUtils.success(response);
 	}
 
 	@PostMapping("/create")

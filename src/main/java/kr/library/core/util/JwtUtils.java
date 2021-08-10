@@ -8,8 +8,13 @@ import org.springframework.cache.Cache;
 import org.springframework.cache.CacheManager;
 import org.springframework.stereotype.Component;
 
+import io.jsonwebtoken.ExpiredJwtException;
+import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
+import kr.library.core.constant.MessageConstants;
+import kr.library.core.exception.ExpiredTokenException;
+import kr.library.core.exception.InvalidTokenException;
 import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
@@ -22,27 +27,38 @@ public class JwtUtils {
 	@Autowired
 	private CacheManager cacheManager;
 	
-	public String createAccessToken(String userId) {
+	public String createAccessToken(String username) {
 		
 		Calendar cale = Calendar.getInstance();
 		cale.add(Calendar.SECOND, EXPIRE_SECONDS);
 		
-		return Jwts.builder()
-				.setSubject(userId)
+		return Jwts
+				.builder()
+				.setSubject(username)
 				.signWith(SignatureAlgorithm.HS256, SECRET)
 				.setExpiration(cale.getTime())
 				.compact();
 	}
 	
-	public void isVaildAccessToken(String token, String userId) {
+	public void isVaildAccessToken(String token, String username) {
 		try {
-			Jwts
-				.parser()
-				.requireSubject(userId)
-				.setSigningKey(SECRET)
-				.parseClaimsJws(token);
-		} catch(Exception e) {
+			
+			String jwtUsername = Jwts.parser()
+									.setSigningKey(SECRET)
+									.parseClaimsJws(token)
+									.getBody()
+									.getSubject();
+			
+			if(!jwtUsername.equals(username)) {
+				throw new InvalidTokenException(MessageConstants.INVALID_TOKEN);
+			}
+			
+		} catch(ExpiredJwtException e) {
 			log.error(String.format("JWT EXPIRED [TOKEN : %s] : ", token, e.getMessage()));
+			throw new ExpiredTokenException(MessageConstants.EXPIRED_TOKEN);
+		} catch(JwtException e) {
+			log.error(String.format("JWT INVALID [TOKEN : %s] : ", token, e.getMessage()));
+			throw new InvalidTokenException(MessageConstants.INVALID_TOKEN);
 		}
 	}
 	

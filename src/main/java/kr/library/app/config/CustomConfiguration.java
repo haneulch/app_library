@@ -6,7 +6,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import kr.library.app.interceptor.CustomInterceptor;
 
 @Configuration
-public class CustomConfiguration implements WebMvcConfigurer{
+public class CustomConfiguration implements WebMvcConfigurer {
 	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {

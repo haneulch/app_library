@@ -1,11 +1,26 @@
 package kr.library.core.aop;
  
+import java.io.BufferedReader;
+import java.util.stream.Collectors;
+
+import javax.servlet.http.HttpServletRequest;
+
+import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
+
+import kr.library.core.util.JsonUtils;
+import kr.library.core.util.JwtUtils;
+import lombok.extern.slf4j.Slf4j;
+
+import org.json.simple.JSONObject;
  
 //ex> api 예시
 // Pointcut	JoinPoints 
@@ -37,12 +52,43 @@ import org.springframework.stereotype.Component;
  *
  *
  */
+@Slf4j
 @Aspect
 @Component
 public class AppLogAspect {
-    Logger logger =  LoggerFactory.getLogger(AppLogAspect.class);
+	
+	@Autowired
+	private JwtUtils jwtUtils;
+	
+	@Pointcut("@annotation(kr.library.core.annotation.AccessTokenCheck)")
+	public void accessTokenCheck() { }
+	
+	@Before("accessTokenCheck()")
+	public void beforeMethod(JoinPoint joinPoint) {
+		HttpServletRequest request = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
+		String accessToken = request.getHeader("X-Auth-Token");
+		
+		jwtUtils.isVaildAccessToken(accessToken, getUserId(joinPoint, request));
+	}
     
-    /**
+    private String getUserId(JoinPoint joinPoint, HttpServletRequest request) {
+    	String username = "";
+    	try {
+    		
+    		BufferedReader br = request.getReader();
+    		String content = br.lines().collect(Collectors.joining());
+    		br.close();
+    		
+			JSONObject json = JsonUtils.toJson(content);
+			username = json.get("username").toString();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return username;
+	}
+
+	/**
      * ==========================================================
      * @author						:	hoosfa
      * @date						:	2021.04.28
@@ -67,9 +113,9 @@ public class AppLogAspect {
     public Object logging(ProceedingJoinPoint pjp) throws Throwable {
     	// pjp.getSignature().getDeclaringTypeName() : packageName+className
     	// pjp.getSignature().getName() : methodNmae
-        logger.info("start - " + pjp.getSignature().getDeclaringTypeName() + " / " + pjp.getSignature().getName());
+        log.info("start - " + pjp.getSignature().getDeclaringTypeName() + " / " + pjp.getSignature().getName());
         Object result = pjp.proceed();
-        logger.info("finished - " + pjp.getSignature().getDeclaringTypeName() + " / " + pjp.getSignature().getName());
+        log.info("finished - " + pjp.getSignature().getDeclaringTypeName() + " / " + pjp.getSignature().getName());
         return result;
     }
     
@@ -98,9 +144,11 @@ public class AppLogAspect {
     public Object logging2(ProceedingJoinPoint pjp) throws Throwable {
     	// pjp.getSignature().getDeclaringTypeName() : packageName+className
     	// pjp.getSignature().getName() : methodNmae
-        logger.info("start - " + pjp.getSignature().getDeclaringTypeName() + " / " + pjp.getSignature().getName());
+        log.info("start - " + pjp.getSignature().getDeclaringTypeName() + " / " + pjp.getSignature().getName());
         Object result = pjp.proceed();
-        logger.info("finished - " + pjp.getSignature().getDeclaringTypeName() + " / " + pjp.getSignature().getName());
+        log.info("finished - " + pjp.getSignature().getDeclaringTypeName() + " / " + pjp.getSignature().getName());
         return result;
     }
+    
+    
 }
